@@ -43,8 +43,8 @@ defmodule HomeworkTest do
       result = find_element(:id, "result")
       assert visible_text(result) == "You entered: Boo xpath!"
     catch
-      error ->
-        take_screenshot("jsFail.png")
+      _kind, error ->
+        take_screenshot("screenshots/jsFail.png")
         raise error
     end
   end
@@ -82,8 +82,8 @@ defmodule HomeworkTest do
       assert visible_text(find_element(:id, "message")) == "It's disabled!"
 
     catch
-      error ->
-        take_screenshot("dynamicFail.png")
+      _kind, error ->
+        take_screenshot("screenshots/dynamicFail.png")
         raise error
     end
   end
@@ -116,8 +116,8 @@ defmodule HomeworkTest do
       assert visible_text(find_element(:id, "flash")) == "You logged out of the secure area!\n×"
 
     catch
-      error ->
-        take_screenshot("authFail.png")
+      _kind, error ->
+        take_screenshot("screenshots/authFail.png")
         raise error
     end
   end
